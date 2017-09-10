@@ -1,10 +1,17 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 *:before, *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body, html {
@@ -22,31 +29,120 @@ body, html {
   height: 300px;
   background: #FFF;
   opacity: 0;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .function-modal.active {
   display: block;
-  animation: .4s appear ease-out;
+  -webkit-animation: .4s appear ease-out;
+     -moz-animation: .4s appear ease-out;
+       -o-animation: .4s appear ease-out;
+          animation: .4s appear ease-out;
   opacity: 1;
 }
 
-@keyframes appear {
+@-webkit-keyframes appear {
   0% {
-    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
     opacity: 0;
   }
   
   24% {
-    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
   }
   
   70% {
-    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
   }
   
   100% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes appear {
+  0% {
+    -moz-transform: rotate(-4deg);
+         transform: rotate(-4deg);
+    opacity: 0;
+  }
+  
+  24% {
+    -moz-transform: rotate(3deg);
+         transform: rotate(3deg);
+  }
+  
+  70% {
+    -moz-transform: rotate(-2deg);
+         transform: rotate(-2deg);
+  }
+  
+  100% {
+    -moz-transform: rotate(0deg);
+         transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes appear {
+  0% {
+    -o-transform: rotate(-4deg);
+       transform: rotate(-4deg);
+    opacity: 0;
+  }
+  
+  24% {
+    -o-transform: rotate(3deg);
+       transform: rotate(3deg);
+  }
+  
+  70% {
+    -o-transform: rotate(-2deg);
+       transform: rotate(-2deg);
+  }
+  
+  100% {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    -webkit-transform: rotate(-4deg);
+       -moz-transform: rotate(-4deg);
+         -o-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+    opacity: 0;
+  }
+  
+  24% {
+    -webkit-transform: rotate(3deg);
+       -moz-transform: rotate(3deg);
+         -o-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  
+  70% {
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+         -o-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  
+  100% {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
     opacity: 1;
   }
 }
@@ -57,22 +153,22 @@ body, html {
   width: 50%;
   float: left;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .function-modal ul li {
   margin: 0;
   padding: 0;
   width: 100%;
-  flex-grow: 1;
+  height: 33.3%;
+  float: left;
   color: #2E2E2E;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   cursor: pointer;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  -moz-transition: .2s;
   transition: .2s;
+  text-align: center;
 }
 
 .function-modal ul li.active {
@@ -89,7 +185,8 @@ body, html {
 }
 
 .function-modal ul li a {
-  position: absolute;
+  position: relative;
+  top: 32px;
   color: #2E2E2E;
   font-size: 25px;
   font-family: sans-serif;
@@ -144,19 +241,12 @@ body, html {
 .calculator {
   width: 100vw;
   height: 100vh;
-  
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 250px;
-  grid-template-areas:
-    "outputs"
-    "inputs"
 }
 
 .calculator .toggle-modal {
   z-index: 999999;
   width: 35px;
-  height: 70px;
+  height: 35px;
   position: absolute;
   right: 19px;
   top: 13px;
@@ -167,9 +257,14 @@ body, html {
   display: block;
   width: 100%;
   height: 3px;
-  border-radius: 1px;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
   margin: 7px;
   background: #888888;
+  -webkit-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
   transition: .2s ease-out;
 }
 
@@ -186,17 +281,29 @@ body, html {
   font-weight: bold;
   font-size: 15px;
   padding: 13px 25px;
-  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+     -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+       -o-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  -moz-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
 }
 
 .calculator .error-message.visible {
-  transform: none;
+  -webkit-transform: none;
+     -moz-transform: none;
+      -ms-transform: none;
+       -o-transform: none;
+          transform: none;
 }
 
 .calculator .outputs {
-  grid-area: outputs;
-  
+  height: -webkit-calc(100vh - 250px);
+  height: -moz-calc(100vh - 250px);
+  height: calc(100vh - 250px);
   background: #F5F5F5;
   color: #786E6D;
   font-size: 30px;
@@ -236,16 +343,12 @@ body, html {
   word-wrap: break-word;
 }
 
-.calculator .inputs {
-  display: grid;
-  grid-template-columns: 34vw 12vw 31vw 23vw;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "numbers basic advanced trig";
+.calculator .inputs .numbers, .calculator .inputs .basic, .calculator .inputs .advanced, .calculator .inputs .trig {
+  float: left;
 }
 
 .calculator .inputs .numbers {
-  grid-area: numbers;
+  width: 34vw;
   background: #3B3B3B;
 }
 .calculator .inputs .numbers .button-column {
@@ -256,7 +359,7 @@ body, html {
 }
 
 .calculator .inputs .basic {
-  grid-area: basic;
+  width: 12vw;
   background: #787878;
 }
 .calculator .inputs .basic .button-column {
@@ -264,7 +367,7 @@ body, html {
 }
 
 .calculator .inputs .advanced {
-  grid-area: advanced;
+  width: 31vw;
   background: #19BB9D;
 }
 .calculator .inputs .advanced .button-column {
@@ -272,7 +375,7 @@ body, html {
 }
 
 .calculator .inputs .trig {
-  grid-area: trig;
+  width: 23vw;
   background: #4BDBED;
 }
 .calculator .inputs .trig .button-column {
@@ -299,9 +402,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   cursor: default;
   color: #E4F9FC;
   font-size: 22px;
@@ -309,22 +410,50 @@ body, html {
   position: relative;
 }
 
+.calculator .inputs .button-column span p {
+  margin-top: 10%;
+}
+
+.calculator .inputs .button-column.six-items span p {
+  margin-top: 6%;
+}
+
 .calculator .inputs .button-column.four-items span {height: 25%;}
 .calculator .inputs .button-column.five-items span {height: 20%;}
 .calculator .inputs .button-column.six-items span {height: 16.66%;}
 
 @media screen and (max-width: 1000px) {
-  .calculator .inputs {
-    grid-template-columns: 44vw 14vw 42vw;
-    grid-template-areas:
-      "numbers basic advanced";
+  .calculator .inputs .numbers {
+    width: 44vw;
+  }
+  
+  .calculator .inputs .basic {
+    width: 14vw;
+  }
+  
+  .calculator .inputs .advanced {
+    width: 42vw;
+  }
+  
+  .calculator .inputs .trig {
+    display: none;
   }
 }
 
 @media screen and (max-width: 567px) {
-  .calculator .inputs {
-    grid-template-columns: 75vw 25vw;
-    grid-template-areas:
-      "numbers basic";
+  .calculator .inputs .numbers {
+    width: 75vw;
+  }
+  
+  .calculator .inputs .basic {
+    width: 25vw;
+  }
+  
+  .calculator .inputs .advanced {
+    display: none;
+  }
+  
+  .calculator .inputs .trig {
+    display: none;
   }
 }
